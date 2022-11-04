@@ -37,12 +37,12 @@ public class Display {
         }
         
         private void cleanConsole() {
-            eclipse.keyPress(KeyEvent.VK_SHIFT);
-            eclipse.keyPress(KeyEvent.VK_F10);
-            eclipse.keyRelease(KeyEvent.VK_SHIFT);
-            eclipse.keyRelease(KeyEvent.VK_F10);
-            eclipse.keyPress(KeyEvent.VK_R);
-            eclipse.keyRelease(KeyEvent.VK_R);
+//            eclipse.keyPress(KeyEvent.VK_SHIFT);
+//            eclipse.keyPress(KeyEvent.VK_F10);
+//            eclipse.keyRelease(KeyEvent.VK_SHIFT);
+//            eclipse.keyRelease(KeyEvent.VK_F10);
+//            eclipse.keyPress(KeyEvent.VK_R);
+//            eclipse.keyRelease(KeyEvent.VK_R);
         }
     }
 }

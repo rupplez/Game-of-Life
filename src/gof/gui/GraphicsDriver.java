@@ -15,22 +15,30 @@ public class GraphicsDriver extends JFrame implements DisplayDriver {
 	private int size = 10;
 	Color color = Color.black;
 	
+	static int iter = 0;
+	
     Cell[][] grid;
 	
-	public void displayBoard(Board board) {
-        setTitle("Game of Life");
-
+    public GraphicsDriver() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
+        setContentPane(new DrawingArea());
+        
+        setSize(800,800);
+        setVisible(true);
+    }
+	public void displayBoard(Board board) {
+        setTitle("Game of Life"+" - Generation: "+iter);
+		
         grid = board.getGrid();
         
         x = 0;
         y = 0;
         
-        setContentPane(new DrawingArea());
+        repaint();
         
-        setSize(300,300);
-        setVisible(true);
+        iter++;
+        
 	}
     class DrawingArea extends JPanel {
         public void paintComponent(Graphics g) {
@@ -40,6 +48,7 @@ public class GraphicsDriver extends JFrame implements DisplayDriver {
                 for (Cell c : row) {
                    if(c.getState()) {
                        g.fillRect(x,y,size,size);
+                       //g.fillOval(x,y,size,size);
                    }
                    x+=size;
                    //System.out.println(x+" "+y);

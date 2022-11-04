@@ -13,12 +13,12 @@ public class GameOfLife {
 //        int iterations = in.nextInt();
 //        in.close();
         DisplayDriver dd = Display.getDriver();
-        Board b = new Board(30, 30, 0.3);
+        Board b = new Board(80, 80, 0.3);
 
         while(true) {
             dd.displayBoard(b);
             b.update();
-            Thread.sleep(300);
+            Thread.sleep(100);
         }
     }
 }
